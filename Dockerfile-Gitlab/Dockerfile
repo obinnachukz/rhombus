@@ -9,7 +9,7 @@ sudo docker run --detach \
   --hostname gitlab.example.com \
   --env GITLAB_ROOT_PASSWORD="Rhombus2022"
   --publish 443:443 --publish 8080:80 --publish 1001:22 \
-  --name gitlab \
+  --name gitlab/gitlab-ce \
   --restart always \
   --volume $GITLAB_HOME/config:/etc/gitlab \
   --volume $GITLAB_HOME/logs:/var/log/gitlab \
