@@ -3,18 +3,14 @@
 #Build gitlab/gitlab-ce image
 docker build -t gitlab/gitlab-ce:rhombus $(PWD)
 
-#Declare variables
-GITLAB_ROOT_PASSWORD=$1
-
 # Set up volume location
 export GITLAB_HOME=$HOME/gitlab
 
 # Install Docker engine
 sudo docker run --detach \
   --hostname gitlab.example.com \
-  --env $1="Rhombus2022"
-  --publish 443:443 --publish 8080:80 --publish 1001:22 \
-  --name gitlab/gitlab-ce \
+  -p 443:443 -p 8080:80 -p 1001:22 \
+  --name gitlab \
   --restart always \
   --volume $GITLAB_HOME/config:/etc/gitlab \
   --volume $GITLAB_HOME/logs:/var/log/gitlab \
@@ -22,7 +18,6 @@ sudo docker run --detach \
   --shm-size 2gb \
   gitlab/gitlab-ce:latest
 
-# echo user name and password to login to gitlab GUI
+# log in details for gitlab GUI
 echo "GIT-LAB URL: " "localhost:8080" "if not available, change port to 443 or 1001"
 echo "GIT-LAB Username =" "root"
-echo "GIT-LAB password =" $1
