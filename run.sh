@@ -1,16 +1,15 @@
 #!/bin/bash
 
+# Deploy gitlab runner image
+# Use Docker volumes to start the Runner container
+# Create the Docker volume:
+docker volume create gitlab-runner-config
 
-
-echo **********************************************************************************
-
-echo "Git lab runner registration for macOS"
-
-# Download the binary for your system
-sudo curl --output /usr/local/bin/gitlab-runner https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-darwin-amd64
-
-# Give it permission to execute
-sudo chmod +x /usr/local/bin/gitlab-runner
-
-# Command to register runner
-gitlab-runner register --url http://localhost:8080/ --registration-token $REGISTRATION_TOKEN
+# Start the GitLab Runner container 
+docker run -d --name gitlab-runner --restart always \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v gitlab-runner-config:/etc/gitlab-runner \
+    gitlab/gitlab-runner:latest
+    
+ # Register gitlab runner
+ gitlab-runner register
