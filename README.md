@@ -34,4 +34,13 @@ rhombus challenge
 ***************************************************************************
 *  4th STEP ```register gitlab runner```
 * STEPS:
-*   1. 
+*   See instructions in the gitlab GUI
+*   Register gitlab runner ```see details in the gitlab GUI``` after running the command below:
+*     gitlab-runner register
+
+***************************************************************************
+*  5th STEP:
+*  Set variables
+*  Deploy ```.gitlab-ci.yml``` file
+*  Run pipeline
+
