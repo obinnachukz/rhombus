@@ -17,21 +17,21 @@ rhombus challenge
 
 
 ***************************************************************************
-2nd STEP ```Build top Dockerfile```
-STEP 1: To build top file ```Dockerfile``` :
-  a. set permision ```chmod u+x build.sh```
-  b. run command ```sh build.sh```
+*  2nd STEP ```Build top Dockerfile```
+* STEP 1: To build top file ```Dockerfile``` :
+*  a. set permision ```chmod u+x build.sh```
+*   b. run command ```sh build.sh```
   
 
 ***************************************************************************
-3rd STEP ```run gitlab runner```
-STEP 1: set permission ```chmod u+x run.sh```
+*  3rd STEP ```run gitlab runner```
+* STEP 1: set permission ```chmod u+x run.sh```
         run command ```sh run.sh```
         
         
 
 
 ***************************************************************************
-4th STEP ```register gitlab runner```
-STEPS:
-  1. 
+*  4th STEP ```register gitlab runner```
+* STEPS:
+*   1. 
