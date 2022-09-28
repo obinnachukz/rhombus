@@ -1,5 +1,4 @@
 #!/bin/bash
 
-#Build Docker image
-
-docker build -t nginx:rhombus $(PWD)
+#Build gitlab/gitlab-ce image
+docker build -t gitlab/gitlab-ce:rhombus $(PWD)
