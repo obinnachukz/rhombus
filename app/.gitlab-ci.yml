@@ -1,0 +1,13 @@
+stages:
+- build
+- deploy
+
+build_docker:
+  stage: build
+  tags:
+    - docker
+  image: docker:latest
+  services:
+    - docker:dind
+    
+   
