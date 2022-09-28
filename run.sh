@@ -12,4 +12,4 @@ docker run -d --name gitlab-runner --restart always \
     gitlab/gitlab-runner:latest
     
  # Register gitlab runner
- gitlab-runner register
+ sudo gitlab-runner register
